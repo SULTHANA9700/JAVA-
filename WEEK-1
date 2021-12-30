@@ -1,0 +1,65 @@
+Week 1: Fundamentals of classes and objects.
+Write a program by creating an 'Employee' class having the    following methods and print the final salary.
+1 - 'getInfo()' which takes the input as name , id , salary, number of hours of work per day of employee.
+2 - 'AddSal()' which adds $10 to salary of the employee if it is less than $500.
+3 - 'AddWork()' which adds $5 to salary of employee if the number   of hours of work per day is more than 6 hours.
+
+import java.util.Scanner;
+class Employee1
+{
+int hour;
+float salary;
+String name;
+String id;
+public void getInfo()
+{
+Scanner readme=new Scanner(System.in);
+System.out.println("enter name");
+name=readme.next();
+System.out.println("enter id");
+id=readme.next();
+System.out.println("enter salary");
+salary=readme.nextInt();
+System.out.println("enter no. of hours worked");
+hour=readme.nextInt();
+System.out.println("name is: "+name);
+System.out.println("id is: "+id);
+System.out.println("salary is: "+salary);
+System.out.println("no. of hours worked is: "+hour);
+}
+public void AddSal()
+{
+if(salary<500)
+{
+salary=salary+10;
+}
+}
+public void AddWork()
+{
+if(hour>6)
+{
+salary=salary+5;
+}
+}
+public void display()
+{
+System.out.println("final salary is: "+salary);
+}
+public static void main(String[] args)
+{
+int m;
+Scanner n=new Scanner(System.in);
+System.out.println("enter no. of employees");
+m=n.nextInt();
+Employee1[] obj=new Employee1[m];
+for(int i=0;i<m;i++)
+{
+System.out.println("Employee"+(i+1));
+obj[i]=new Employee1();
+obj[i].getInfo();
+obj[i].AddSal();
+obj[i].AddWork();
+obj[i].display();
+}
+}
+}
