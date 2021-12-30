@@ -1,0 +1,31 @@
+Write a program for the following:  an inner class named Inner is defined within the scope of class Outer.Therefore, any code in class Inner can directly access the variable 
+outer_x. An instance method named display( ) is defined inside Inner. This method displays outer_x on the standard output stream.The main( ) method of InnerClassDemo creates
+an instance of class Outer and invokes its test( ) method. That method creates an instance of class Inner and the display( ) method is called.
+
+import java.util.Scanner;
+class Outer //outer class
+{
+Scanner readme=new Scanner(System.in);
+int outer_x=readme.nextInt();
+public void test()  //test method of outer class
+{
+Inner i=new Inner();
+i.display();
+}
+class Inner  //inner class
+{
+public void display()  //display method of inner class
+{
+System.out.println("the value is: "+outer_x);
+}
+}
+}
+class InnerClassDemo  //InnerClassDemo calling the test method of outer class
+{
+public static void main(String[] args)
+{
+Outer o=new Outer();
+o.test();
+}
+}
+
