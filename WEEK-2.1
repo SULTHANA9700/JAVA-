@@ -1,0 +1,44 @@
+Write a java program to demonstarate a static keyword.
+class Student
+{
+int rollno;
+String name;
+static String college="RVR";
+Student(int r, String n)
+{  
+rollno = r;  
+name = n;
+}
+public static void change()
+{
+college="RVR &JC";
+} 
+public void display()
+{
+System.out.println(rollno+" "+name+" "+college);
+}
+static{
+System.out.println("student");
+}
+}
+import java.util.Scanner;
+class Student_main
+{
+public static void main(String[] args)
+{
+Scanner readme=new Scanner(System.in);
+System.out.println("enter roll no. of 1st student");
+int a=readme.nextInt();
+System.out.println("enter name of 1st student");
+String b=readme.next();
+System.out.println("enter roll no. of 2nd student");
+int c=readme.nextInt();
+System.out.println("enter name of 2nd student");
+String d=readme.next();
+Student.change();
+Student s1 = new Student(a,b);  
+Student s2 = new Student(c,d); 
+s1.display();
+s2.display(); 
+}
+}
