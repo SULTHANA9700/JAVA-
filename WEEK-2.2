@@ -1,0 +1,30 @@
+Write a java program to demonstarate this keyword
+class with_this
+{
+int n1,n2;
+int sm;
+public void get(int n1,int n2)
+{
+this.n1=n1;
+this.n2=n2;
+}
+public void sum()
+{
+sm=n1+n2;
+System.out.println("sum is "+sm);
+}
+}
+import java.util.Scanner;
+class with_this_main
+{
+public static void main(String[] args)
+{
+Scanner readme=new Scanner(System.in);
+int a,b;
+a=readme.nextInt();
+b=readme.nextInt();
+with_this obj=new with_this();
+obj.get(a,b);
+obj.sum();
+}
+}
