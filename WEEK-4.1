@@ -1,0 +1,58 @@
+Write a java program for the following: Create a class employee which takes input as name, id and designation
+and create an another class salary which takes input as Basic pay (BP), House Rent Allowance (HRA), Dearness Allowance(DA) and Provident Found
+(PF) and inherits the members of class employee. Print the Net Pay of each employee using the reademp() in employee class and readsalary() 
+,calculatesalary() and displayemp() methods in salary class. (np = bp + hra + da – pf)
+
+import java.util.Scanner;
+class employee2
+{
+String name;
+int id;
+String designation;
+public void reademp()
+{
+Scanner readme=new Scanner(System.in);
+System.out.println("enter name");
+name=readme.next();
+System.out.println("enter id");
+id=readme.nextInt();
+System.out.println("enter designation");
+designation=readme.next();
+}
+}
+class Salary extends employee2
+{
+Scanner me=new Scanner(System.in);
+int BP,HRA,DA,PF,NP;
+public void readsalary()
+{
+int salary;
+super.reademp();
+System.out.println("enter BP");
+BP=me.nextInt();
+System.out.println("enter HRA");
+HRA=me.nextInt();
+System.out.println("enter DA");
+DA=me.nextInt();
+System.out.println("enter PF");
+PF=me.nextInt();
+}
+public void calculatesalary()
+{
+NP=BP+HRA+DA-PF;
+}
+public void displayemp()
+{
+System.out.println("name of the employee : "+name +" , " +"id: "+id+" , "+"designation is: "+designation+" , "+"net salary is: "+NP);
+}
+}
+class employeedemo2
+{
+public static void main(String[] args)
+{
+Salary obj=new Salary();
+obj.readsalary();
+obj.calculatesalary();
+obj.displayemp();
+}
+}
