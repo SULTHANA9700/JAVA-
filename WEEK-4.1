@@ -1,58 +1,69 @@
-Write a java program for the following: Create a class employee which takes input as name, id and designation
-and create an another class salary which takes input as Basic pay (BP), House Rent Allowance (HRA), Dearness Allowance(DA) and Provident Found
-(PF) and inherits the members of class employee. Print the Net Pay of each employee using the reademp() in employee class and readsalary() 
-,calculatesalary() and displayemp() methods in salary class. (np = bp + hra + da – pf)
+/Write a java program for the following: Create a class employee which takes input as name, id and designation and create an another class salary which takes input as Basic pay (BP), House Rent Allowance (HRA), Dearness Allowance(DA) and Provident Found (PF) and inherits the members of class employee. Print the Net Pay of each employee using the reademp() in employee class and readslary() , calculatesalary() and displayemp() methods in salary class. (np = bp + hra + da – pf)
 
-import java.util.Scanner;
-class employee2
+
+import java.util.*;
+class Employee
 {
+Scanner sc=new Scanner(System.in);
 String name;
 int id;
 String designation;
-public void reademp()
+void reademp()
 {
-Scanner readme=new Scanner(System.in);
-System.out.println("enter name");
-name=readme.next();
-System.out.println("enter id");
-id=readme.nextInt();
-System.out.println("enter designation");
-designation=readme.next();
+
+System.out.println("Enter name of the Employee:");
+name=sc.nextLine();
+System.out.println("Enter id of the Employee:");
+id=sc.nextInt();
+System.out.println("Enter designation of the Employee:");
+sc.nextLine();
+designation=sc.nextLine();
 }
 }
-class Salary extends employee2
+class Salary extends Employee
 {
-Scanner me=new Scanner(System.in);
-int BP,HRA,DA,PF,NP;
-public void readsalary()
+Scanner c=new Scanner(System.in);
+int BP,HRA,DA,PF,np;
+void readsalary()
 {
-int salary;
 super.reademp();
-System.out.println("enter BP");
-BP=me.nextInt();
-System.out.println("enter HRA");
-HRA=me.nextInt();
-System.out.println("enter DA");
-DA=me.nextInt();
-System.out.println("enter PF");
-PF=me.nextInt();
+System.out.println("Enter Basic Pay BP:");
+BP=c.nextInt();
+System.out.println("Enter House Rent Allowance HRA : ");
+HRA=c.nextInt();
+System.out.println("Enter Dearness Allowance DA : ");
+DA=c.nextInt();
+System.out.println("Enter Provident Found PF : ");
+PF=c.nextInt();
 }
-public void calculatesalary()
+void calculatesalary()
 {
-NP=BP+HRA+DA-PF;
+np=BP+HRA+DA-PF;
 }
-public void displayemp()
+void displayemp()
 {
-System.out.println("name of the employee : "+name +" , " +"id: "+id+" , "+"designation is: "+designation+" , "+"net salary is: "+NP);
+System.out.println("Employe Name : "+name+ " , id : "+id+" Designation : "+designation+" , Net Salary : "+np);
 }
 }
-class employeedemo2
+class EmployeeDemo1
 {
-public static void main(String[] args)
+public static void main(String args[])
 {
-Salary obj=new Salary();
-obj.readsalary();
-obj.calculatesalary();
-obj.displayemp();
+Scanner s=new Scanner(System.in);
+System.out.println("Enter number of employee:");
+int n=s.nextInt(),i;
+Salary a[]=new Salary[n];
+for(i=0;i<n;i++)
+{
+System.out.println("Employee"+(i+1)+":");
+a[i]=new Salary();
+a[i].readsalary();
+a[i].calculatesalary();
+}
+for(i=0;i<n;i++)
+{
+System.out.println("Employee"+(i+1)+":");
+a[i].displayemp();
 }
 }
+} 
