@@ -28,7 +28,7 @@ public void getattendance()
 System.out.println("enter sno:");
 sno=s.nextInt();
 System.out.println("enter attendance of the student:");
-attendense=s.nextInt();
+attendance=s.nextInt();
 }
 void calattendance()
 {
