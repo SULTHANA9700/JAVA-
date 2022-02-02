@@ -32,7 +32,7 @@ attendance=s.nextInt();
 }
 void calattendance()
 {
-System.out.println("the attendance of the student is "+attendense+"%");
+System.out.println("the attendance of the student is "+attendance+"%");
 }
 void booleligible()
 {
