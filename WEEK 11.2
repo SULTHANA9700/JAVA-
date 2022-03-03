@@ -1,0 +1,29 @@
+//Write a java program to implement Graphics class and color class
+
+import java.awt.*;
+import java.applet.Applet;
+import java.awt.Graphics;
+public class GraCol extends Applet
+{
+String str;
+public void init()
+{
+str=getParameter("enter a parameter");
+}
+public void paint(Graphics g)
+{
+g.setColor(Color.black);
+g.drawString(str,100,200);
+g.setColor(Color.blue);
+g.drawLine(100,200,300,400);
+g.setColor(Color.green);
+g.fillRect(170,100,330,30);  
+g.setColor(Color.red);
+g.fillOval(170,200,130,190);
+}
+}
+
+
+<applet code="GraCol.class" width="30" height="60">
+<param name="enter a parameter" value="Neha">
+</applet>
