@@ -1,0 +1,40 @@
+//Write a java program for handling key events.
+
+import java.awt.*;
+import java.awt.event.*;
+import java.applet.*;
+public class KeyTest extends Applet implements KeyListener
+{
+public void init()
+{
+Label l=new Label("Enter character");
+add(l);
+TextField tf=new TextField(20);
+tf.addKeyListener(this);
+add(tf);
+}
+public void keyPressed(KeyEvent e){}
+public void keyReleased(KeyEvent e){}
+public void keyTyped(KeyEvent e)
+{
+showStatus("Recently typedcharacter in the text field is:"+e.getKeyChar());
+}
+}
+
+
+<HTML>
+<HEAD>
+<TITLE>  
+KEYLISTENER
+</TITLE>
+</HEAD
+<BODY>
+<APPLET CODE="KeyTest.class"
+WIDTH="100"
+HEIGHT="100">
+</APPLET>
+</BODY>
+</HTML>
+
+
+
